@@ -1,0 +1,2054 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maya Board 玛雅图霸天下 | 官方视频平台_创意影像与创作者社区</title>
+<meta name="description" content="Maya Board 玛雅图霸天下官方网站，专注创意影像与视觉表达的视频品牌平台，汇集原创短片、创作者社区与企业动态，深耕品质内容生态，值得信赖。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131a2b'/%3E%3Cpath d='M18 44V22l14 8 14-8v22' stroke='%2300e5c7' stroke-width='5' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --mb-bg:#0b0f1a;
+  --mb-bg-soft:#121a2b;
+  --mb-panel:#151f33;
+  --mb-panel-2:#1b2740;
+  --mb-line:rgba(120,160,220,.18);
+  --mb-cyan:#00e5c7;
+  --mb-lime:#b7ff3c;
+  --mb-blue:#4f8bff;
+  --mb-text:#e8eefc;
+  --mb-dim:#97a6c4;
+  --mb-dim2:#6f80a1;
+  --mb-radius:16px;
+  --mb-shadow:0 18px 44px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--mb-bg);
+  color:var(--mb-text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input{font-family:inherit}
+::selection{background:var(--mb-cyan);color:#04101a}
+
+/* ============ 吸顶区：公告条 + 页头 ============ */
+.mb-sticky{
+  position:sticky;top:0;z-index:80;
+  background:rgba(11,15,26,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--mb-line);
+}
+.mb-announce{
+  background:linear-gradient(90deg,#0d2b3a,#12233c 45%,#1a2a4d);
+  border-bottom:1px solid var(--mb-line);
+  font-size:13px;
+  color:#cfe3ff;
+}
+.mb-announce-inner{
+  max-width:1240px;margin:0 auto;padding:8px 22px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.mb-announce-tag{
+  background:var(--mb-cyan);color:#04121a;
+  font-size:11px;font-weight:800;letter-spacing:1px;
+  padding:2px 8px;border-radius:6px;flex:none;
+}
+.mb-announce-list{display:flex;gap:26px;flex-wrap:wrap;align-items:center}
+.mb-announce-list li{list-style:none;position:relative;padding-left:14px}
+.mb-announce-list li::before{
+  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:5px;height:5px;border-radius:50%;background:var(--mb-lime);
+}
+.mb-announce-list b{color:#fff;font-weight:600}
+
+.mb-header-inner{
+  max-width:1240px;margin:0 auto;padding:12px 22px;
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+}
+.mb-logo{display:flex;align-items:center;gap:11px;flex:none}
+.mb-logo-mark{
+  width:40px;height:40px;border-radius:11px;flex:none;
+  background:linear-gradient(135deg,#00e5c7,#4f8bff 70%);
+  display:grid;place-items:center;
+  box-shadow:0 6px 18px rgba(0,229,199,.28);
+}
+.mb-logo-mark svg{width:24px;height:24px}
+.mb-logo-text{display:flex;flex-direction:column;line-height:1.15}
+.mb-logo-text strong{font-size:17px;letter-spacing:.5px}
+.mb-logo-text span{font-size:11px;color:var(--mb-dim2);letter-spacing:2.5px}
+.mb-nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.mb-nav a{
+  font-size:14px;color:var(--mb-dim);padding:7px 12px;border-radius:9px;
+  transition:.22s;white-space:nowrap;
+}
+.mb-nav a:hover{color:#fff;background:rgba(79,139,255,.14)}
+.mb-header-tools{display:flex;align-items:center;gap:10px;flex:none}
+.mb-search{
+  display:flex;align-items:center;gap:7px;
+  background:var(--mb-panel);border:1px solid var(--mb-line);
+  border-radius:10px;padding:6px 10px;transition:.22s;
+}
+.mb-search:focus-within{border-color:var(--mb-cyan);box-shadow:0 0 0 3px rgba(0,229,199,.12)}
+.mb-search svg{width:15px;height:15px;flex:none;stroke:var(--mb-dim2)}
+.mb-search input{
+  background:none;border:none;outline:none;color:var(--mb-text);
+  font-size:13px;width:132px;
+}
+.mb-search input::placeholder{color:var(--mb-dim2)}
+.mb-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:9px 18px;border-radius:10px;font-size:14px;font-weight:600;transition:.22s;
+}
+.mb-btn-primary{
+  background:linear-gradient(135deg,var(--mb-cyan),#38b6ff);
+  color:#04121a;box-shadow:0 8px 22px rgba(0,229,199,.22);
+}
+.mb-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,229,199,.34)}
+.mb-btn-ghost{
+  border:1px solid var(--mb-line);color:var(--mb-text);
+}
+.mb-btn-ghost:hover{border-color:var(--mb-cyan);color:var(--mb-cyan)}
+.mb-burger{display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--mb-line);place-items:center}
+.mb-burger span{display:block;width:18px;height:2px;background:var(--mb-text);border-radius:2px;position:relative;transition:.25s}
+.mb-burger span::before,.mb-burger span::after{
+  content:"";position:absolute;left:0;width:18px;height:2px;background:var(--mb-text);border-radius:2px;transition:.25s;
+}
+.mb-burger span::before{top:-6px}
+.mb-burger span::after{top:6px}
+.mb-burger.is-open span{background:transparent}
+.mb-burger.is-open span::before{top:0;transform:rotate(45deg);background:var(--mb-cyan)}
+.mb-burger.is-open span::after{top:0;transform:rotate(-45deg);background:var(--mb-cyan)}
+
+/* ============ 通用容器 ============ */
+.mb-wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.mb-section{padding:76px 0;position:relative}
+.mb-section + .mb-section{border-top:1px solid rgba(120,160,220,.09)}
+.mb-section-head{margin-bottom:38px;max-width:760px}
+.mb-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;letter-spacing:2px;color:var(--mb-cyan);
+  text-transform:uppercase;font-weight:700;margin-bottom:14px;
+}
+.mb-eyebrow::before{content:"";width:22px;height:2px;background:var(--mb-cyan)}
+h2.mb-h2{font-size:clamp(24px,3.4vw,34px);line-height:1.3;letter-spacing:.5px;font-weight:800}
+h2.mb-h2 em{font-style:normal;color:var(--mb-cyan)}
+.mb-sub{color:var(--mb-dim);font-size:15px;margin-top:12px;line-height:1.9}
+h3{font-size:18px;line-height:1.45}
+
+/* 锚点偏移 */
+[id]{scroll-margin-top:120px}
+
+/* ============ 首屏 ============ */
+.mb-hero{
+  position:relative;overflow:hidden;
+  padding:70px 0 80px;
+  background:
+    radial-gradient(900px 460px at 82% -8%,rgba(79,139,255,.22),transparent 62%),
+    radial-gradient(700px 400px at 6% 8%,rgba(0,229,199,.15),transparent 60%),
+    linear-gradient(180deg,#0b0f1a,#0a0e17);
+}
+.mb-hero-grid{
+  display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;
+}
+.mb-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid rgba(0,229,199,.35);
+  background:rgba(0,229,199,.08);
+  color:var(--mb-cyan);font-size:12.5px;font-weight:700;letter-spacing:1px;
+  padding:5px 13px;border-radius:999px;margin-bottom:20px;
+}
+.mb-hero-badge i{width:6px;height:6px;border-radius:50%;background:var(--mb-cyan);animation:mb-pulse 1.8s infinite}
+@keyframes mb-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
+h1.mb-h1{
+  font-size:clamp(38px,5.6vw,64px);line-height:1.08;font-weight:900;letter-spacing:-.5px;
+  background:linear-gradient(100deg,#fff 20%,#8ff4e6 55%,#7fb0ff 92%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.mb-h1-sub{
+  font-size:clamp(15px,1.8vw,19px);color:#b9c8e4;letter-spacing:3px;
+  margin-top:10px;font-weight:600;
+}
+.mb-hero-desc{color:var(--mb-dim);font-size:15px;line-height:1.95;margin-top:22px;max-width:560px}
+.mb-hero-desc b{color:#dff3ff;font-weight:600}
+.mb-hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
+.mb-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px;
+  max-width:520px;
+}
+.mb-stat{
+  background:rgba(21,31,51,.66);
+  border:1px solid var(--mb-line);border-radius:14px;
+  padding:15px 16px;
+}
+.mb-stat b{display:block;font-size:clamp(20px,2.6vw,27px);font-weight:800;color:#fff;letter-spacing:.5px}
+.mb-stat b em{font-style:normal;font-size:13px;color:var(--mb-cyan);margin-left:2px}
+.mb-stat span{font-size:12px;color:var(--mb-dim2);letter-spacing:.5px}
+
+/* 首屏视觉 */
+.mb-hero-visual{position:relative}
+.mb-hero-main{
+  position:relative;border-radius:20px;overflow:hidden;
+  border:1px solid rgba(120,160,220,.24);
+  box-shadow:var(--mb-shadow);aspect-ratio:16/10;
+}
+.mb-hero-main svg{width:100%;height:100%}
+.mb-hero-main .mb-play{
+  position:absolute;inset:0;display:grid;place-items:center;
+}
+.mb-play-btn{
+  width:74px;height:74px;border-radius:50%;
+  background:rgba(0,229,199,.92);color:#04121a;
+  display:grid;place-items:center;
+  box-shadow:0 0 0 10px rgba(0,229,199,.16),0 14px 34px rgba(0,0,0,.5);
+  transition:.25s;
+}
+.mb-play-btn:hover{transform:scale(1.07);box-shadow:0 0 0 16px rgba(0,229,199,.14),0 16px 38px rgba(0,0,0,.55)}
+.mb-play-btn svg{width:26px;height:26px;margin-left:4px}
+.mb-hero-float{
+  position:absolute;right:-14px;bottom:-22px;width:214px;
+  background:rgba(15,22,37,.94);border:1px solid var(--mb-line);
+  border-radius:14px;padding:12px;display:flex;gap:11px;align-items:center;
+  box-shadow:var(--mb-shadow);backdrop-filter:blur(8px);
+}
+.mb-hero-float .mb-float-thumb{
+  width:52px;height:52px;border-radius:10px;overflow:hidden;flex:none;
+}
+.mb-hero-float p{font-size:12.5px;line-height:1.45;color:#cfdcf3;font-weight:600}
+.mb-hero-float small{font-size:11px;color:var(--mb-cyan)}
+
+/* ============ 品牌解析（长文） ============ */
+.mb-about-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.mb-prose p{color:var(--mb-dim);font-size:15px;line-height:2.05;margin-bottom:16px}
+.mb-prose p b{color:#e6f0ff;font-weight:600}
+.mb-prose h3{color:#fff;margin:26px 0 12px;font-size:17px;display:flex;align-items:center;gap:9px}
+.mb-prose h3::before{content:"";width:4px;height:16px;border-radius:2px;background:linear-gradient(180deg,var(--mb-cyan),var(--mb-blue))}
+.mb-about-card{
+  background:linear-gradient(160deg,var(--mb-panel),#111a2b);
+  border:1px solid var(--mb-line);border-radius:var(--mb-radius);
+  padding:26px;position:sticky;top:140px;
+}
+.mb-about-card h3{font-size:16px;margin-bottom:16px}
+.mb-fact-list{list-style:none;display:grid;gap:13px}
+.mb-fact-list li{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--mb-dim);line-height:1.7}
+.mb-fact-list li strong{color:#fff;display:block;font-size:14px;margin-bottom:2px}
+.mb-fact-ico{
+  width:30px;height:30px;border-radius:9px;flex:none;display:grid;place-items:center;
+  background:rgba(0,229,199,.1);border:1px solid rgba(0,229,199,.24);
+}
+.mb-fact-ico svg{width:15px;height:15px;stroke:var(--mb-cyan);fill:none;stroke-width:1.9}
+
+/* ============ 焦点内容 ============ */
+.mb-focus-grid{
+  display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:auto auto;gap:18px;
+}
+.mb-card{
+  background:var(--mb-panel);border:1px solid var(--mb-line);
+  border-radius:var(--mb-radius);overflow:hidden;
+  transition:transform .28s,border-color .28s,box-shadow .28s;
+  display:flex;flex-direction:column;
+}
+.mb-card:hover{transform:translateY(-5px);border-color:rgba(0,229,199,.42);box-shadow:0 20px 40px rgba(0,0,0,.45)}
+.mb-focus-main{grid-row:span 2}
+.mb-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0e1524}
+.mb-thumb svg{width:100%;height:100%;display:block;transition:transform .55s}
+.mb-card:hover .mb-thumb svg{transform:scale(1.045)}
+.mb-thumb::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 46%,rgba(6,10,18,.85));
+  pointer-events:none;
+}
+.mb-thumb-tag{
+  position:absolute;top:11px;left:11px;z-index:2;
+  background:rgba(0,229,199,.94);color:#04121a;
+  font-size:11px;font-weight:800;letter-spacing:.6px;
+  padding:3px 9px;border-radius:6px;
+}
+.mb-thumb-time{
+  position:absolute;bottom:10px;right:11px;z-index:2;
+  background:rgba(5,9,16,.82);color:#dbe6fa;font-size:11px;
+  padding:2px 7px;border-radius:5px;letter-spacing:.5px;
+}
+.mb-thumb-mini-play{
+  position:absolute;bottom:10px;left:11px;z-index:2;display:flex;align-items:center;gap:5px;
+  color:var(--mb-cyan);font-size:11px;font-weight:700;
+}
+.mb-body{padding:15px 16px 17px;display:flex;flex-direction:column;gap:9px;flex:1}
+.mb-card-title{font-size:15px;font-weight:700;line-height:1.5;color:#f0f5ff}
+.mb-focus-main .mb-card-title{font-size:20px}
+.mb-card-excerpt{font-size:12.8px;color:var(--mb-dim2);line-height:1.72;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mb-meta{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:6px;font-size:12px;color:var(--mb-dim2);flex-wrap:wrap}
+.mb-avatar{
+  width:22px;height:22px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-size:10.5px;font-weight:800;color:#04121a;
+}
+.mb-meta .mb-dot{width:3px;height:3px;border-radius:50%;background:var(--mb-dim2)}
+.mb-actions{display:flex;gap:8px;margin-left:auto}
+.mb-act{
+  display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--mb-dim2);
+  padding:3px 7px;border-radius:7px;transition:.2s;border:1px solid transparent;
+}
+.mb-act:hover{color:var(--mb-cyan);background:rgba(0,229,199,.09)}
+.mb-act.is-liked{color:var(--mb-cyan)}
+.mb-act.is-faved{color:#ff7aa2}
+.mb-act svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.9}
+.mb-act.is-liked svg,.mb-act.is-faved svg{fill:currentColor}
+
+/* ============ 专题 ============ */
+.mb-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mb-topic{
+  position:relative;border-radius:var(--mb-radius);overflow:hidden;
+  border:1px solid var(--mb-line);min-height:236px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  transition:.3s;
+}
+.mb-topic:hover{border-color:rgba(0,229,199,.45);transform:translateY(-4px)}
+.mb-topic-bg{position:absolute;inset:0}
+.mb-topic-bg svg{width:100%;height:100%}
+.mb-topic-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,10,18,.15),rgba(6,10,18,.93))}
+.mb-topic-body{position:relative;z-index:2;padding:20px}
+.mb-topic-state{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.6px;
+  padding:3px 9px;border-radius:999px;margin-bottom:10px;
+  background:rgba(0,229,199,.16);color:var(--mb-cyan);border:1px solid rgba(0,229,199,.3);
+}
+.mb-topic-state.mb-warm{background:rgba(255,158,80,.14);color:#ffb066;border-color:rgba(255,158,80,.3)}
+.mb-topic-state.mb-violet{background:rgba(168,140,255,.15);color:#bda6ff;border-color:rgba(168,140,255,.3)}
+.mb-topic h3{font-size:17px;margin-bottom:7px}
+.mb-topic p{font-size:12.6px;color:#a8b8d4;line-height:1.7}
+
+/* ============ 创作者 ============ */
+.mb-creators{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.mb-creator{
+  background:var(--mb-panel);border:1px solid var(--mb-line);border-radius:var(--mb-radius);
+  padding:22px 18px;text-align:center;transition:.28s;position:relative;overflow:hidden;
+}
+.mb-creator::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:3px;
+  background:linear-gradient(90deg,var(--mb-cyan),var(--mb-blue));
+  opacity:0;transition:.28s;
+}
+.mb-creator:hover{transform:translateY(-5px);border-color:rgba(79,139,255,.42)}
+.mb-creator:hover::before{opacity:1}
+.mb-creator-avatar{
+  width:62px;height:62px;border-radius:50%;margin:0 auto 13px;
+  display:grid;place-items:center;font-size:21px;font-weight:800;color:#04121a;
+  border:2px solid rgba(255,255,255,.14);
+}
+.mb-creator h3{font-size:15px;margin-bottom:4px}
+.mb-creator .mb-craft{font-size:11.5px;color:var(--mb-cyan);letter-spacing:.6px;margin-bottom:9px}
+.mb-creator .mb-cdesc{font-size:12.4px;color:var(--mb-dim2);line-height:1.7;min-height:44px}
+.mb-creator-stats{display:flex;justify-content:center;gap:16px;margin-top:13px;padding-top:13px;border-top:1px solid var(--mb-line)}
+.mb-creator-stats div{font-size:11px;color:var(--mb-dim2)}
+.mb-creator-stats b{display:block;color:#fff;font-size:14px;font-weight:700}
+.mb-more-link{
+  display:inline-flex;align-items:center;gap:6px;color:var(--mb-cyan);font-size:13.5px;font-weight:600;
+  margin-top:20px;
+}
+.mb-more-link:hover{gap:10px}
+
+/* ============ 数据榜单 ============ */
+.mb-rank-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.mb-rank-panel{
+  background:var(--mb-panel);border:1px solid var(--mb-line);border-radius:var(--mb-radius);
+  padding:22px;
+}
+.mb-rank-panel h3{font-size:16px;margin-bottom:16px;display:flex;align-items:center;gap:9px}
+.mb-rank-panel h3 span{
+  font-size:10.5px;font-weight:700;color:#04121a;background:var(--mb-lime);
+  padding:2px 7px;border-radius:5px;
+}
+.mb-rank-list{list-style:none;display:grid;gap:11px}
+.mb-rank-list li{
+  display:flex;align-items:center;gap:12px;font-size:13.5px;
+  padding:9px 10px;border-radius:10px;transition:.2s;
+}
+.mb-rank-list li:hover{background:rgba(79,139,255,.1)}
+.mb-rank-no{
+  width:22px;height:22px;border-radius:7px;flex:none;display:grid;place-items:center;
+  font-size:11.5px;font-weight:800;background:rgba(255,255,255,.06);color:var(--mb-dim);
+}
+.mb-rank-list li:nth-child(1) .mb-rank-no{background:var(--mb-cyan);color:#04121a}
+.mb-rank-list li:nth-child(2) .mb-rank-no{background:#4f8bff;color:#04121a}
+.mb-rank-list li:nth-child(3) .mb-rank-no{background:#b7ff3c;color:#04121a}
+.mb-rank-name{flex:1;color:#dce7fa;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mb-rank-val{font-size:11.5px;color:var(--mb-dim2)}
+
+/* ============ 故事随笔 ============ */
+.mb-story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mb-story{
+  background:linear-gradient(170deg,var(--mb-panel-2),#131c2e);
+  border:1px solid var(--mb-line);border-radius:var(--mb-radius);
+  padding:24px;position:relative;transition:.28s;
+}
+.mb-story:hover{border-color:rgba(183,255,60,.34);transform:translateY(-4px)}
+.mb-story-quote{
+  font-size:34px;line-height:1;color:var(--mb-cyan);opacity:.5;font-family:Georgia,serif;
+}
+.mb-story h3{font-size:16.5px;margin:8px 0 10px;line-height:1.5}
+.mb-story p{font-size:13px;color:var(--mb-dim2);line-height:1.85}
+.mb-story-by{display:flex;align-items:center;gap:8px;margin-top:16px;font-size:12px;color:var(--mb-dim)}
+.mb-story-by .mb-avatar{width:24px;height:24px;font-size:11px}
+
+/* ============ 评论 ============ */
+.mb-reviews-wrap{position:relative;overflow:hidden}
+.mb-reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mb-review{
+  background:var(--mb-panel);border:1px solid var(--mb-line);
+  border-radius:14px;padding:18px;font-size:13px;color:#c3d1e8;line-height:1.8;
+}
+.mb-review-top{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+.mb-review-top b{font-size:13px;color:#fff}
+.mb-review-stars{margin-left:auto;font-size:11px;color:#ffcf5c;letter-spacing:1px}
+.mb-review-foot{margin-top:11px;font-size:11.5px;color:var(--mb-dim2);display:flex;gap:10px}
+.mb-review-foot button:hover{color:var(--mb-cyan)}
+
+/* ============ 创作灵感 ============ */
+.mb-idea-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mb-idea{
+  border:1px dashed rgba(0,229,199,.28);border-radius:14px;padding:20px;
+  background:rgba(0,229,199,.04);transition:.25s;
+}
+.mb-idea:hover{background:rgba(0,229,199,.09);border-style:solid}
+.mb-idea-ico{
+  width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  background:rgba(0,229,199,.14);margin-bottom:12px;
+}
+.mb-idea-ico svg{width:17px;height:17px;stroke:var(--mb-cyan);fill:none;stroke-width:1.9}
+.mb-idea h3{font-size:15px;margin-bottom:7px}
+.mb-idea p{font-size:12.8px;color:var(--mb-dim2);line-height:1.75}
+
+/* ============ 企业动态 ============ */
+.mb-log{display:grid;gap:0}
+.mb-log-item{
+  display:grid;grid-template-columns:118px 1fr auto;gap:20px;align-items:start;
+  padding:20px 4px;border-bottom:1px solid rgba(120,160,220,.12);transition:.2s;
+}
+.mb-log-item:hover{background:rgba(79,139,255,.05)}
+.mb-log-date{font-size:12.5px;color:var(--mb-cyan);font-weight:700;letter-spacing:.5px;padding-top:2px}
+.mb-log-item h3{font-size:15px;margin-bottom:6px}
+.mb-log-item p{font-size:12.8px;color:var(--mb-dim2);line-height:1.75}
+.mb-log-tag{
+  font-size:11px;color:var(--mb-dim);border:1px solid var(--mb-line);
+  padding:3px 9px;border-radius:999px;white-space:nowrap;height:fit-content;
+}
+
+/* ============ 合作品牌 ============ */
+.mb-partners{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.mb-partner{
+  border:1px solid var(--mb-line);border-radius:12px;padding:18px 10px;
+  text-align:center;font-size:13px;font-weight:700;color:var(--mb-dim);
+  background:var(--mb-panel);transition:.24s;letter-spacing:.5px;
+}
+.mb-partner:hover{color:var(--mb-cyan);border-color:rgba(0,229,199,.4);transform:translateY(-3px)}
+
+/* ============ FAQ ============ */
+.mb-faq{display:grid;gap:11px;max-width:900px}
+.mb-faq details{
+  background:var(--mb-panel);border:1px solid var(--mb-line);
+  border-radius:12px;padding:0;overflow:hidden;transition:.22s;
+}
+.mb-faq details[open]{border-color:rgba(0,229,199,.34)}
+.mb-faq summary{
+  list-style:none;cursor:pointer;padding:15px 18px;font-size:14.5px;font-weight:600;color:#e9f0fc;
+  display:flex;align-items:center;gap:11px;
+}
+.mb-faq summary::-webkit-details-marker{display:none}
+.mb-faq summary::before{
+  content:"+";font-size:17px;color:var(--mb-cyan);font-weight:400;width:16px;flex:none;transition:.22s;
+}
+.mb-faq details[open] summary::before{content:"−"}
+.mb-faq p{padding:0 18px 16px 45px;font-size:13.2px;color:var(--mb-dim);line-height:1.85}
+
+/* ============ 联系/投稿 ============ */
+.mb-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.mb-contact-card{
+  background:linear-gradient(155deg,#14233a,#101a2b);
+  border:1px solid var(--mb-line);border-radius:var(--mb-radius);padding:28px;
+}
+.mb-contact-card h3{font-size:17px;margin-bottom:14px}
+.mb-contact-card p{font-size:13.4px;color:var(--mb-dim);line-height:1.9;margin-bottom:18px}
+.mb-contact-line{display:flex;gap:10px;font-size:13px;color:#cfdcf3;margin-bottom:9px;align-items:center}
+.mb-contact-line svg{width:14px;height:14px;stroke:var(--mb-cyan);fill:none;stroke-width:1.9;flex:none}
+
+/* ============ 反馈表单/按钮组 ============ */
+.mb-inline-form{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.mb-inline-form input{
+  flex:1;min-width:170px;background:rgba(9,14,24,.75);border:1px solid var(--mb-line);
+  border-radius:10px;padding:10px 13px;color:var(--mb-text);font-size:13px;outline:none;transition:.2s;
+}
+.mb-inline-form input:focus{border-color:var(--mb-cyan)}
+.mb-form-hint{font-size:12px;margin-top:10px;color:var(--mb-cyan);min-height:18px}
+
+/* ============ 页脚 ============ */
+.mb-footer{
+  border-top:1px solid var(--mb-line);background:#080c15;padding:52px 0 26px;margin-top:20px;
+}
+.mb-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
+.mb-footer h4{font-size:13px;color:#fff;margin-bottom:14px;letter-spacing:1px}
+.mb-footer ul{list-style:none;display:grid;gap:9px}
+.mb-footer ul a,.mb-footer ul li{font-size:12.8px;color:var(--mb-dim2);transition:.2s}
+.mb-footer ul a:hover{color:var(--mb-cyan)}
+.mb-footer-brand p{font-size:12.8px;color:var(--mb-dim2);line-height:1.95;max-width:330px;margin-top:14px}
+.mb-footer-bottom{
+  max-width:1240px;margin:36px auto 0;padding:20px 22px 0;
+  border-top:1px solid rgba(120,160,220,.12);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.2px;color:var(--mb-dim2);
+}
+
+/* ============ Toast / 返回顶部 ============ */
+.mb-toast{
+  position:fixed;left:50%;bottom:38px;transform:translate(-50%,26px);
+  background:rgba(20,32,52,.97);border:1px solid rgba(0,229,199,.4);
+  color:#eafffb;font-size:13px;padding:11px 20px;border-radius:11px;
+  box-shadow:0 16px 40px rgba(0,0,0,.55);
+  opacity:0;pointer-events:none;transition:.3s;z-index:200;
+}
+.mb-toast.is-show{opacity:1;transform:translate(-50%,0)}
+.mb-top-btn{
+  position:fixed;right:24px;bottom:30px;width:46px;height:46px;border-radius:13px;
+  background:rgba(21,31,51,.94);border:1px solid var(--mb-line);
+  display:grid;place-items:center;z-index:120;
+  opacity:0;pointer-events:none;transform:translateY(14px);transition:.28s;
+  box-shadow:0 10px 26px rgba(0,0,0,.4);
+}
+.mb-top-btn.is-show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.mb-top-btn:hover{border-color:var(--mb-cyan)}
+.mb-top-btn svg{width:17px;height:17px;stroke:var(--mb-cyan);fill:none;stroke-width:2.2}
+
+/* ============ 模态框 ============ */
+.mb-modal{
+  position:fixed;inset:0;z-index:220;display:none;
+  place-items:center;padding:20px;
+  background:rgba(4,8,15,.82);backdrop-filter:blur(6px);
+}
+.mb-modal.is-open{display:grid}
+.mb-modal-box{
+  width:min(520px,100%);background:linear-gradient(165deg,#16223a,#101a2b);
+  border:1px solid rgba(0,229,199,.26);border-radius:18px;padding:26px;
+  box-shadow:0 30px 70px rgba(0,0,0,.6);max-height:86vh;overflow:auto;
+}
+.mb-modal-box h3{font-size:18px;margin-bottom:6px;display:flex;align-items:center;gap:9px}
+.mb-modal-box h3 span{font-size:11px;color:#04121a;background:var(--mb-cyan);padding:2px 8px;border-radius:6px}
+.mb-modal-box > p{font-size:13px;color:var(--mb-dim);line-height:1.85;margin-bottom:16px}
+.mb-modal-field{margin-bottom:13px}
+.mb-modal-field label{display:block;font-size:12.5px;color:var(--mb-dim);margin-bottom:5px}
+.mb-modal-field input,.mb-modal-field textarea{
+  width:100%;background:rgba(8,13,22,.8);border:1px solid var(--mb-line);
+  border-radius:9px;padding:10px 12px;color:var(--mb-text);font-size:13px;outline:none;
+  transition:.2s;resize:vertical;
+}
+.mb-modal-field input:focus,.mb-modal-field textarea:focus{border-color:var(--mb-cyan)}
+.mb-modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}
+.mb-share-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 4px}
+.mb-share-item{
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  border:1px solid var(--mb-line);border-radius:11px;padding:13px 6px;
+  font-size:11.5px;color:var(--mb-dim);transition:.22s;
+}
+.mb-share-item:hover{border-color:var(--mb-cyan);color:var(--mb-cyan);transform:translateY(-3px)}
+.mb-share-ico{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;color:#04121a}
+.mb-copy-line{
+  display:flex;gap:8px;margin-top:14px;
+}
+.mb-copy-line input{flex:1;background:rgba(8,13,22,.8);border:1px solid var(--mb-line);border-radius:9px;padding:9px 12px;color:var(--mb-dim);font-size:12.5px;outline:none}
+
+/* ============ 动画 ============ */
+.mb-reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.mb-reveal.is-in{opacity:1;transform:none}
+
+/* ============ 响应式 ============ */
+@media (max-width:1080px){
+  .mb-hero-grid{grid-template-columns:1fr;gap:40px}
+  .mb-about-grid{grid-template-columns:1fr}
+  .mb-about-card{position:static}
+  .mb-focus-grid{grid-template-columns:1fr 1fr}
+  .mb-focus-main{grid-row:auto;grid-column:span 2}
+  .mb-creators{grid-template-columns:repeat(2,1fr)}
+  .mb-topic-grid,.mb-story-grid,.mb-reviews,.mb-idea-grid{grid-template-columns:repeat(2,1fr)}
+  .mb-partners{grid-template-columns:repeat(3,1fr)}
+  .mb-footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .mb-sticky{position:sticky}
+  .mb-header-inner{gap:14px}
+  .mb-nav{
+    display:none;order:4;width:100%;flex-direction:column;gap:2px;
+    padding:10px 0 4px;border-top:1px solid var(--mb-line);margin-top:6px;
+  }
+  .mb-nav.is-open{display:flex}
+  .mb-nav a{padding:10px 12px}
+  .mb-burger{display:grid;margin-left:auto}
+  .mb-header-tools{order:5;width:100%;padding-bottom:6px}
+  .mb-search{flex:1}
+  .mb-search input{width:100%}
+  .mb-announce-list{gap:8px 18px;font-size:12px}
+  .mb-announce-list li:nth-child(n+3){display:none}
+  .mb-section{padding:56px 0}
+  .mb-contact-grid,.mb-rank-grid{grid-template-columns:1fr}
+  .mb-log-item{grid-template-columns:1fr;gap:5px}
+  .mb-log-tag{justify-self:start}
+  [id]{scroll-margin-top:150px}
+}
+@media (max-width:600px){
+  .mb-topic-grid,.mb-story-grid,.mb-reviews,.mb-idea-grid,.mb-focus-grid,.mb-creators{grid-template-columns:1fr}
+  .mb-focus-main{grid-column:auto}
+  .mb-partners{grid-template-columns:repeat(2,1fr)}
+  .mb-stats{grid-template-columns:1fr;gap:10px}
+  .mb-hero-float{display:none}
+  .mb-share-row{grid-template-columns:repeat(2,1fr)}
+  .mb-announce-tag{display:none}
+  .mb-footer-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .mb-reveal{opacity:1;transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ==================== 吸顶：公告条 + 页头 ==================== -->
+<div class="mb-sticky">
+  <div class="mb-announce">
+    <div class="mb-announce-inner">
+      <span class="mb-announce-tag">官方发布</span>
+      <ul class="mb-announce-list">
+        <li><b>「玛雅图霸天下·城市光影计划」</b>第七季开放报名，新增成都、西安双城站点</li>
+        <li><b>创作激励 3.0</b> 上线：原创短片上传即纳入月度精品内容评选</li>
+        <li><b>影像工具库</b> 更新 42 组转场模板与调色预设，支持一键下载</li>
+      </ul>
+    </div>
+  </div>
+
+  <header class="mb-header">
+    <div class="mb-header-inner">
+      <a class="mb-logo" href="#mb-top" aria-label="Maya Board 玛雅图霸天下 官方网站首页">
+        <span class="mb-logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 18V6l8 5 8-5v12" stroke="#04121a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="mb-logo-text">
+          <strong>Maya Board</strong>
+          <span>玛雅图霸天下</span>
+        </span>
+      </a>
+
+      <nav class="mb-nav" id="mb-nav">
+        <a href="#mb-top">首页</a>
+        <a href="#mb-about">品牌解析</a>
+        <a href="#mb-focus">焦点影像</a>
+        <a href="#mb-topics">专题企划</a>
+        <a href="#mb-creators">创作者</a>
+        <a href="#mb-rank">榜单</a>
+        <a href="#mb-news">企业动态</a>
+        <a href="#mb-faq">帮助</a>
+        <a href="#mb-contact">联系</a>
+      </nav>
+
+      <div class="mb-header-tools">
+        <form class="mb-search" id="mb-search-form" role="search" onsubmit="return false;">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <input type="search" id="mb-search-input" placeholder="搜索原创影像、创作者、专题" aria-label="站内搜索">
+        </form>
+        <button class="mb-btn mb-btn-primary" id="mb-submit-btn" type="button">投稿入口</button>
+      </div>
+
+      <button class="mb-burger" id="mb-burger" type="button" aria-label="展开导航菜单" aria-expanded="false" aria-controls="mb-nav">
+        <span></span>
+      </button>
+    </div>
+  </header>
+</div>
+
+<main id="mb-top">
+
+  <!-- ==================== 首屏 ==================== -->
+  <section class="mb-hero">
+    <div class="mb-wrap">
+      <div class="mb-hero-grid">
+        <div class="mb-hero-copy">
+          <span class="mb-hero-badge"><i></i>官方网站 · 企业级影像品牌</span>
+          <h1 class="mb-h1">Maya Board 玛雅图霸天下</h1>
+          <p class="mb-h1-sub">让每一帧原创影像，都有被看见的力量</p>
+          <p class="mb-hero-desc">
+            Maya Board 玛雅图霸天下是一个专注于<b>创意影像与视觉表达</b>的视频品牌平台。我们以官方内容团队为核心，
+            联合数百位原创创作者，持续输出城市探索、手作美学、人物访谈与前卫实验短片。
+            作为深耕垂直领域的影像企业，我们坚持正版、高清、专业的出品标准，用真实与温暖连接每一位热爱画面的观众。
+          </p>
+          <div class="mb-hero-actions">
+            <a class="mb-btn mb-btn-primary" href="#mb-focus">浏览焦点影像</a>
+            <a class="mb-btn mb-btn-ghost" href="#mb-creators">认识创作者</a>
+            <button class="mb-btn mb-btn-ghost" type="button" id="mb-share-btn">分享品牌首页</button>
+          </div>
+          <div class="mb-stats">
+            <div class="mb-stat"><b data-count="1860">0<em>+</em></b><span>原创影像作品</span></div>
+            <div class="mb-stat"><b data-count="412">0<em>位</em></b><span>签约创作者</span></div>
+            <div class="mb-stat"><b data-count="96">0<em>%</em></b><span>社区正向口碑</span></div>
+          </div>
+        </div>
+
+        <div class="mb-hero-visual">
+          <div class="mb-hero-main">
+            <svg viewBox="0 0 640 400" role="img" aria-label="玛雅图霸天下品牌主视觉：霓虹城市天际线与流光轨道">
+              <defs>
+                <linearGradient id="mbHeroSky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#070d19"/><stop offset="1" stop-color="#16263f"/>
+                </linearGradient>
+                <linearGradient id="mbHeroNeon" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#00e5c7"/><stop offset="1" stop-color="#4f8bff"/>
+                </linearGradient>
+                <linearGradient id="mbHeroGlow" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#4f8bff" stop-opacity=".55"/><stop offset="1" stop-color="#00e5c7" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="400" fill="url(#mbHeroSky)"/>
+              <circle cx="500" cy="92" r="74" fill="url(#mbHeroGlow)"/>
+              <circle cx="500" cy="92" r="40" fill="#0d2233" stroke="#00e5c7" stroke-opacity=".55"/>
+              <g fill="#0d1726" stroke="#213653" stroke-width="1">
+                <rect x="34" y="196" width="66" height="204"/>
+                <rect x="112" y="150" width="54" height="250"/>
+                <rect x="178" y="228" width="78" height="172"/>
+                <rect x="268" y="168" width="48" height="232"/>
+                <rect x="328" y="246" width="86" height="154"/>
+                <rect x="426" y="188" width="58" height="212"/>
+                <rect x="496" y="234" width="72" height="166"/>
+                <rect x="578" y="204" width="42" height="196"/>
+              </g>
+              <g fill="#00e5c7" opacity=".8">
+                <rect x="46" y="212" width="8" height="8"/><rect x="66" y="212" width="8" height="8"/>
+                <rect x="124" y="170" width="8" height="8"/><rect x="144" y="192" width="8" height="8"/>
+                <rect x="192" y="244" width="8" height="8"/><rect x="222" y="266" width="8" height="8"/>
+                <rect x="346" y="266" width="8" height="8"/><rect x="382" y="290" width="8" height="8"/>
+                <rect x="440" y="208" width="8" height="8"/><rect x="512" y="256" width="8" height="8"/>
+                <rect x="590" y="226" width="8" height="8"/>
+              </g>
+              <g fill="#b7ff3c" opacity=".55">
+                <rect x="60" y="240" width="6" height="6"/><rect x="136" y="220" width="6" height="6"/>
+                <rect x="284" y="196" width="6" height="6"/><rect x="454" y="240" width="6" height="6"/>
+              </g>
+              <path d="M0 372 Q160 322 320 356 T640 330" stroke="url(#mbHeroNeon)" stroke-width="3" fill="none" opacity=".9"/>
+              <path d="M0 386 Q170 344 340 372 T640 352" stroke="#4f8bff" stroke-width="1.4" fill="none" opacity=".55"/>
+              <text x="34" y="60" fill="#e8eefc" font-size="21" font-weight="700" font-family="sans-serif">MAYA BOARD</text>
+              <text x="34" y="84" fill="#00e5c7" font-size="12" letter-spacing="4" font-family="sans-serif">ORIGINAL VISUAL STUDIO</text>
+            </svg>
+            <div class="mb-play">
+              <button class="mb-play-btn" type="button" data-play aria-label="播放品牌形象片">
+                <svg viewBox="0 0 24 24" fill="#04121a" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="mb-hero-float">
+            <div class="mb-float-thumb">
+              <svg viewBox="0 0 52 52" role="img" aria-label="主播推荐：《霓虹走廊》短片封面">
+                <rect width="52" height="52" fill="#132b3d"/>
+                <path d="M0 40 L52 22 L52 52 L0 52 Z" fill="#0a1c2a"/>
+                <circle cx="38" cy="14" r="8" fill="#00e5c7" opacity=".8"/>
+                <path d="M6 42 L24 26 L34 34 L46 20" stroke="#b7ff3c" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <div>
+              <p>本周主推《霓虹走廊》</p>
+              <small>官方出品 · 4K 高清</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 品牌解析（长文） ==================== -->
+  <section class="mb-section" id="mb-about">
+    <div class="mb-wrap">
+      <div class="mb-section-head mb-reveal">
+        <span class="mb-eyebrow">Brand Insight</span>
+        <h2 class="mb-h2">玛雅图霸天下是谁：一份关于<em>影像品牌</em>的深度解析</h2>
+        <p class="mb-sub">我们以企业化的内容生产方式与社区化的创作生态，让每一部原创作品都有完整的生命周期。</p>
+      </div>
+
+      <div class="mb-about-grid">
+        <div class="mb-prose mb-reveal">
+          <p>
+            <b>Maya Board 玛雅图霸天下</b>是一个围绕「影像」展开的原创内容品牌。从品牌建立之初，我们就明确了自身的定位：
+            不做流量的搬运工，而做内容的出品方。作为行业内持续运营的垂直领域平台，我们把内容生态分成三条主线，
+            分别是<b>官方出品、创作者共创、以及企业合作定制</b>。三条主线互相支撑，构成了今天玛雅图霸天下的完整面貌。
+          </p>
+          <p>
+            官方出品由品牌内容团队独立完成，聚焦城市探索、文化访谈与影像美学三大方向；创作者共创则依托社区机制，
+            让签约作者与新人作者都能获得选题支持、剪辑指导与分发资源；企业合作定制则面向品牌客户，
+            提供从创意脚本、拍摄执行到高清成片交付的一站式服务。我们坚持正版素材、合规授权与专业流程，
+            这也是玛雅图霸天下能够积累长期口碑的根本原因。
+          </p>
+
+          <h3>一、从记录到表达：内容标准的坚持</h3>
+          <p>
+            在玛雅图霸天下，一部作品被定义为「完成」的标准，并不只是剪辑导出。我们要求每一部内容都具备清晰的表达意图：
+            它想让人看到什么、感受到什么、记住什么。因此，我们在内部建立了选题评审、拍摄复核与成片复盘的三道工序，
+            让审片成为一种常态。很多创作者在第一次参与官方企划时会感到意外——原来一条三分钟的短片，可以讨论四十多分钟。
+            但正是这种近乎苛刻的打磨，让平台的内容品质始终保持在一个稳定的水准线上。
+          </p>
+          <p>
+            为了适配不同题材，玛雅图霸天下把内容标签体系分得极细。城市探索类标签包含街巷、建筑、夜景、交通、市井生活；
+            文化访谈类标签包含工匠、艺人、在地文化、口述史；影像美学类标签包含光影实验、色彩构成、声音设计、镜头语言。
+            创作者可以按标签检索参考案例，也可以把标签作为上传作品的分类依据，让优质内容更容易被同好发现。
+          </p>
+
+          <h3>二、创作者社区：一个可以被信任的成长路径</h3>
+          <p>
+            玛雅图霸天下相信，创作者最需要的不是一句鼓励，而是一条能走通的路。为此，我们把社区的成长路径拆成了三个阶段：
+            新人阶段的「第一支片子」，成长阶段的「系列化创作」，成熟阶段的「品牌企划合作」。每个阶段都有对应的任务清单、
+            工具包与一对一反馈。平台会定期举办创作挑战与征集活动，优秀作品将进入官方精品内容池，
+            获得首页推荐、专题收录与线下展映机会。
+          </p>
+          <p>
+            我们也很清楚，社区的温度来自细节。玛雅图霸天下在评论与互动上设置了真人审核与友善规则，鼓励具体、诚实、有建设性的反馈；
+            同时在每月的创作者例会上公开数据与规则调整，让社区治理尽可能透明。这种「可被讨论」的运营方式，
+            让平台在过去几年里保持了相当稳定的创作者留存率，也让不少新人第一次感受到被认真对待。
+          </p>
+
+          <h3>三、企业责任与长期主义</h3>
+          <p>
+            作为一个企业品牌，玛雅图霸天下始终把社会责任放在与内容同等重要的位置。我们与多个城市的文化机构合作，
+            记录即将消失的老手艺与老街区；我们为青年创作者提供免费的剪辑公开课与素材版权咨询；
+            我们也坚持不做夸大宣传、不使用侵权素材、不为博取眼球而牺牲表达。这些选择在短期内未必带来增长，
+            但让我们在行业中获得了「值得信赖」的评价。
+          </p>
+          <p>
+            未来，玛雅图霸天下会继续深耕影像这一垂直领域，把内容生态做得更扎实：更清晰的版权体系、更友好的创作工具、
+            更开放的社区合作。我们相信，真实自有力量，影像自有温度。每一个认真拍片的人，都值得被更好的平台认真对待。
+          </p>
+        </div>
+
+        <aside class="mb-about-card mb-reveal">
+          <h3>品牌档案 · 关键信息</h3>
+          <ul class="mb-fact-list">
+            <li>
+              <span class="mb-fact-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l8-4 8 4v12"/><path d="M9 20v-6h6v6"/></svg></span>
+              <div><strong>品牌定位</strong>创意影像出品与创作者社区双轮驱动的视频品牌</div>
+            </li>
+            <li>
+              <span class="mb-fact-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>
+              <div><strong>持续运营</strong>自成立以来稳定更新，累计发布原创影像作品 1860 部以上</div>
+            </li>
+            <li>
+              <span class="mb-fact-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"/><path d="M16 8h4v4"/></svg></span>
+              <div><strong>内容方向</strong>城市探索 · 在地文化 · 人物访谈 · 手作美学 · 光影实验</div>
+            </li>
+            <li>
+              <span class="mb-fact-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l3 6 6 1-4.5 4.5L18 21l-6-3.5L6 21l1.5-6.5L3 10l6-1z"/></svg></span>
+              <div><strong>品质承诺</strong>正版授权、高清交付、出品标准统一，尊重每一份创作</div>
+            </li>
+            <li>
+              <span class="mb-fact-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></span>
+              <div><strong>社区规模</strong>412 位签约创作者，月度活跃互动超过 26 万次</div>
+            </li>
+          </ul>
+          <div class="mb-inline-form" style="margin-top:20px">
+            <input type="email" id="mb-news-mail" placeholder="留下邮箱，订阅官方内容月报" aria-label="订阅邮箱">
+            <button class="mb-btn mb-btn-primary" type="button" id="mb-news-btn">订阅</button>
+          </div>
+          <p class="mb-form-hint" id="mb-news-hint" aria-live="polite"></p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 焦点影像 ==================== -->
+  <section class="mb-section" id="mb-focus">
+    <div class="mb-wrap">
+      <div class="mb-section-head mb-reveal">
+        <span class="mb-eyebrow">Focus Videos</span>
+        <h2 class="mb-h2">焦点影像：<em>值得反复观看</em>的六部原创作品</h2>
+        <p class="mb-sub">由玛雅图霸天下官方出品团队与签约创作者共同完成的精华内容，全部为正版高清成片。</p>
+      </div>
+
+      <div class="mb-focus-grid" id="mb-focus-grid">
+        <!-- 主焦点 -->
+        <article class="mb-card mb-focus-main mb-reveal">
+          <div class="mb-thumb">
+            <svg viewBox="0 0 640 360" role="img" aria-label="焦点作品《霓虹走廊：一条街的十二小时》封面，夜色街道霓虹倒影">
+              <defs>
+                <linearGradient id="mbFocusA" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#0b1424"/><stop offset="1" stop-color="#1b2b47"/>
+                </linearGradient>
+              </defs>
+              <rect width="640" height="360" fill="url(#mbFocusA)"/>
+              <path d="M0 250 L640 200 L640 360 L0 360 Z" fill="#091320"/>
+              <g stroke="#4f8bff" opacity=".5" stroke-width="2">
+                <path d="M40 360 L210 210"/><path d="M140 360 L290 205"/><path d="M250 360 L380 200"/>
+                <path d="M380 360 L470 198"/><path d="M500 360 L560 196"/><path d="M600 360 L640 194"/>
+              </g>
+              <g fill="#00e5c7" opacity=".85">
+                <rect x="96" y="120" width="10" height="120" rx="5"/>
+                <rect x="220" y="86" width="10" height="152" rx="5"/>
+                <rect x="352" y="106" width="10" height="140" rx="5"/>
+                <rect x="472" y="74" width="10" height="168" rx="5"/>
+              </g>
+              <g fill="#ff7aa2" opacity=".7">
+                <rect x="150" y="150" width="8" height="96" rx="4"/>
+                <rect x="404" y="132" width="8" height="112" rx="4"/>
+              </g>
+              <circle cx="560" cy="80" r="34" fill="#16273e" stroke="#00e5c7" stroke-opacity=".5"/>
+              <path d="M0 250 L640 200" stroke="#b7ff3c" stroke-width="2.5" opacity=".8"/>
+              <text x="30" y="46" fill="#dff3ff" font-size="17" font-weight="700" font-family="sans-serif">NEON CORRIDOR</text>
+            </svg>
+            <span class="mb-thumb-tag">官方出品</span>
+            <span class="mb-thumb-mini-play">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="#00e5c7" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg> 焦点
+            </span>
+            <span class="mb-thumb-time">12:46</span>
+          </div>
+          <div class="mb-body">
+            <h3 class="mb-card-title">霓虹走廊：一条街的十二小时</h3>
+            <p class="mb-card-excerpt">从清晨第一盏卷帘门开启，到深夜最后一班公交驶离，我们用十二个小时记录下这条老商业街的光线变化与人的表情。镜头不打扰，只停留。</p>
+            <div class="mb-meta">
+              <span class="mb-avatar" style="background:linear-gradient(135deg,#00e5c7,#4f8bff)">玛</span>
+              <span>玛雅官方内容组</span>
+              <span class="mb-dot"></span>
+              <span>城市探索</span>
+              <div class="mb-actions">
+                <button class="mb-act" type="button" data-like aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.5-7 9-7 9z"/></svg>
+                  <span data-like-count>2841</span>
+                </button>
+                <button class="mb-act" type="button" data-fav aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                  收藏
+                </button>
+                <button class="mb-act" type="button" data-share>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="6" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="18" r="2.6"/><path d="M8.4 10.8L15.6 7.2M8.4 13.2l7.2 3.6"/></svg>
+                  分享
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 小卡 1 -->
+        <article class="mb-card mb-reveal">
+          <div class="mb-thumb">
+            <svg viewBox="0 0 360 203" role="img" aria-label="作品《手作木器：刨花落下的三十秒》封面，木色工作台与刨花">
+              <rect width="360" height="203" fill="#2a1c12"/>
+              <rect y="120" width="360" height="83" fill="#3d2a1a"/>
+              <g stroke="#c88b4a" stroke-width="3" fill="none" opacity=".85">
+                <path d="M40 120c20-46 60-46 80 0"/><path d="M120 120c26-58 74-58 100 0"/><path d="M220 120c18-40 54-40 72 0"/>
+              </g>
+              <circle cx="292" cy="60" r="30" fill="#e0a961" opacity=".35"/>
+              <rect x="46" y="44" width="70" height="46" rx="4" fill="#5a3d22" stroke="#a97438"/>
+              <path d="M150 76h120" stroke="#b7ff3c" stroke-width="2" opacity=".6"/>
+              <text x="24" y="30" fill="#ffd9a6" font-size="12" letter-spacing="2" font-family="sans-serif">HANDCRAFT</text>
+            </svg>
+            <span class="mb-thumb-tag">手作美学</span>
+            <span class="mb-thumb-time">08:12</span>
+          </div>
+          <div class="mb-body">
+            <h3 class="mb-card-title">手作木器：刨花落下的三十秒</h3>
+            <p class="mb-card-excerpt">一位做了二十七年木工的老师傅，在镜头前重新打磨一只旧木盒。</p>
+            <div class="mb-meta">
+              <span class="mb-avatar" style="background:linear-gradient(135deg,#e0a961,#c88b4a)">木</span>
+              <span>木作阿野</span>
+              <div class="mb-actions">
+                <button class="mb-act" type="button" data-like aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.5-7 9-7 9z"/></svg>
+                  <span data-like-count>1127</span>
+                </button>
+                <button class="mb-act" type="button" data-fav aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 小卡 2 -->
+        <article class="mb-card mb-reveal">
+          <div class="mb-thumb">
+            <svg viewBox="0 0 360 203" role="img" aria-label="作品《访谈：在旧书店里聊了三个下午》封面，书架与暖光">
+              <rect width="360" height="203" fill="#1a1622"/>
+              <g fill="#2c2438">
+                <rect x="18" y="30" width="96" height="150"/><rect x="130" y="20" width="86" height="160"/><rect x="232" y="38" width="112" height="142"/>
+              </g>
+              <g fill="#c9a05e" opacity=".9">
+                <rect x="30" y="44" width="8" height="40"/><rect x="44" y="52" width="8" height="32"/><rect x="58" y="40" width="8" height="44"/>
+                <rect x="144" y="36" width="8" height="38"/><rect x="158" y="46" width="8" height="28"/>
+                <rect x="248" y="52" width="8" height="34"/><rect x="262" y="42" width="8" height="44"/>
+              </g>
+              <circle cx="300" cy="140" r="26" fill="#ffcf5c" opacity=".35"/>
+              <path d="M22 188h316" stroke="#8f6fb5" stroke-width="2" opacity=".6"/>
+              <text x="18" y="192" fill="#d8c8f0" font-size="11" letter-spacing="2" font-family="sans-serif">INTERVIEW</text>
+            </svg>
+            <span class="mb-thumb-tag">人物访谈</span>
+            <span class="mb-thumb-time">21:05</span>
+          </div>
+          <div class="mb-body">
+            <h3 class="mb-card-title">访谈：在旧书店里聊了三个下午</h3>
+            <p class="mb-card-excerpt">关于纸、关于书、关于一个不肯关门的店主。三段长镜头，一次慢下来的谈话。</p>
+            <div class="mb-meta">
+              <span class="mb-avatar" style="background:linear-gradient(135deg,#8f6fb5,#c9a05e)">访</span>
+              <span>玛雅访谈组</span>
+              <div class="mb-actions">
+                <button class="mb-act" type="button" data-like aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.5-7 9-7 9z"/></svg>
+                  <span data-like-count>968</span>
+                </button>
+                <button class="mb-act" type="button" data-fav aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 小卡 3 -->
+        <article class="mb-card mb-reveal">
+          <div class="mb-thumb">
+            <svg viewBox="0 0 360 203" role="img" aria-label="作品《光影实验：用一块玻璃拍下雨夜》封面，玻璃折射与光斑">
+              <rect width="360" height="203" fill="#07131f"/>
+              <g opacity=".85">
+                <circle cx="90" cy="70" r="34" fill="#00e5c7" opacity=".35"/>
+                <circle cx="130" cy="96" r="20" fill="#4f8bff" opacity=".45"/>
+                <circle cx="250" cy="66" r="42" fill="#b7ff3c" opacity=".18"/>
+                <circle cx="300" cy="130" r="24" fill="#ff7aa2" opacity=".3"/>
+              </g>
+              <g stroke="#9fd8ff" stroke-width="1.4" opacity=".5">
+                <path d="M0 150 L90 110 L160 140 L240 96 L330 132 L360 118"/>
+                <path d="M0 176 L80 150 L170 172 L260 142 L360 166"/>
+              </g>
+              <rect x="24" y="24" width="312" height="155" rx="10" fill="none" stroke="#4f8bff" stroke-opacity=".4"/>
+              <text x="24" y="16" fill="#9fd8ff" font-size="11" letter-spacing="2" font-family="sans-serif">LIGHT TEST</text>
+            </svg>
+            <span class="mb-thumb-tag">光影实验</span>
+            <span class="mb-thumb-time">06:34</span>
+          </div>
+          <div class="mb-body">
+            <h3 class="mb-card-title">光影实验：用一块玻璃拍下雨夜</h3>
+            <p class="mb-card-excerpt">低预算也能拍出电影感。这一期把灯、水、玻璃三样东西拆开讲透。</p>
+            <div class="mb-meta">
+              <span class="mb-avatar" style="background:linear-gradient(135deg,#00e5c7,#b7ff3c)">光</span>
+              <span>实验员小柯</span>
+              <div class="mb-actions">
+                <button class="mb-act" type="button" data-like aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.5-7 9-7 9z"/></svg>
+                  <span data-like-count>1534</span>
+                </button>
+                <button class="mb-act" type="button" data-fav aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 小卡 4 -->
+        <article class="mb-card mb-reveal">
+          <div class="mb-thumb">
+            <svg viewBox="0 0 360 203" role="img" aria-label="作品《城市清晨的第一班地铁》封面，站台与列车灯光">
+              <rect width="360" height="203" fill="#0d1826"/>
+              <rect y="140" width="360" height="63" fill="#0a121d"/>
+              <rect x="0" y="96" width="360" height="8" fill="#22334c"/>
+              <g fill="#1b2a40"><rect x="20" y="40" width="60" height="56"/><rect x="96" y="52" width="44" height="44"/><rect x="252" y="46" width="52" height="50"/><rect x="316" y="58" width="32" height="38"/></g>
+              <rect x="150" y="70" width="96" height="70" rx="6" fill="#16283f" stroke="#4f8bff" stroke-opacity=".6"/>
+              <rect x="158" y="80" width="80" height="26" rx="3" fill="#00e5c7" opacity=".5"/>
+              <circle cx="166" cy="146" r="7" fill="#00e5c7" opacity=".8"/>
+              <circle cx="232" cy="146" r="7" fill="#00e5c7" opacity=".8"/>
+              <path d="M0 184 H360" stroke="#b7ff3c" stroke-width="2" opacity=".45"/>
+              <text x="18" y="26" fill="#bcd2f0" font-size="11" letter-spacing="2" font-family="sans-serif">FIRST TRAIN</text>
+            </svg>
+            <span class="mb-thumb-tag">日常记录</span>
+            <span class="mb-thumb-time">09:58</span>
+          </div>
+          <div class="mb-body">
+            <h3 class="mb-card-title">城市清晨的第一班地铁</h3>
+            <p class="mb-card-excerpt">五点半的站台，是城市最安静也最诚实的时刻。我们跟拍了七个早起的人。</p>
+            <div class="mb-meta">
+              <span class="mb-avatar" style="background:linear-gradient(135deg,#4f8bff,#00e5c7)">城</span>
+              <span>清晨记录者</span>
+              <div class="mb-actions">
+                <button class="mb-act" type="button" data-like aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.5-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.5-7 9-7 9z"/></svg>
+                  <span data-like-count>806</span>
+                </button>
+                <button class="mb-act" type="button" data-fav aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 专题企划 ==================== -->
+  <section class="mb-section" id="mb-topics">
+    <div class="mb-wrap">
+      <div class="mb-section-head mb-reveal">
+        <span class="mb-eyebrow">Specials</span>
+        <h2 class="mb-h2">专题企划：<em>长期项目</em>与年度影像计划</h2>
+        <p class="mb-sub">每个专题都由官方策展团队维护，持续更新，并开放创作者报名与作品上传。</p>
+      </div>
+
+      <div class="mb-topic-grid">
+        <article class="mb-topic mb-reveal">
+          <div class="mb-topic-bg">
+            <svg viewBox="0 0 400 240" role="img" aria-label="专题《玛雅图霸天下·城市光影计划》封面，俯视城市灯光网格">
+              <rect width="400" height="240" fill="#0b1a2b"/>
+              <g stroke="#00e5c7" stroke-opacity=".55" stroke-width="1.5">
+                <path d="M0 60H400M0 110H400M0 160H400M0 210H400M70 0V240M150 0V240M230 0V240M310 0V240"/>
+              </g>
+              <g fill="#00e5c7" opacity=".85"><rect x="74" y="64" width="72" height="42"/><rect x="154" y="114" width="72" height="42"/><rect x="234" y="164" width="72" height="42"/></g>
+              <g fill="#4f8bff" opacity=".45"><rect x="234" y="64" width="72" height="42"/><rect x="74" y="164" width="72" height="42"/></g>
+              <circle cx="332" cy="58" r="16" fill="#b7ff3c" opacity=".7"/>
+            </svg>
+          </div>
+          <div class="mb-topic-body">
+            <span class="mb-topic-state">持续更新 · 第七季</span>
+            <h3>城市光影计划</h3>
+            <p>用影像为城市存档。每季选定两座城市，记录街区、手艺人与日常烟火，已收录百余支短片。</p>
+          </div>
+        </article>
+
+        <article class="mb-topic mb-reveal">
+          <div class="mb-topic-bg">
+            <svg viewBox="0 0 400 240" role="img" aria-label="专题《第一支片子》新人扶持计划封面，胶片与轨道">
+              <rect width="400" height="240" fill="#231a2e"/>
+              <g fill="#3a2a4c"><rect x="20" y="40" width="150" height="90" rx="8"/><rect x="220" y="90" width="160" height="96" rx="8"/></g>
+              <g fill="#c9a05e" opacity=".9"><rect x="34" y="54" width="12" height="12"/><rect x="58" y="54" width="12" height="12"/><rect x="82" y="54" width="12" height="12"/><rect x="106" y="54" width="12" height="12"/></g>
+              <path d="M0 210 Q120 176 240 200 T400 184" stroke="#b7ff3c" stroke-width="2.5" fill="none" opacity=".8"/>
+              <circle cx="300" cy="60" r="26" fill="#8f6fb5" opacity=".45"/>
+              <text x="20" y="228" fill="#e0d4f5" font-size="11" letter-spacing="2" font-family="sans-serif">FIRST FILM</text>
+            </svg>
+          </div>
+          <div class="mb-topic-body">
+            <span class="mb-topic-state mb-violet">开放报名</span>
+            <h3>第一支片子</h3>
+            <p>面向从未发布过作品的创作者。选题辅导、设备借用、剪辑反馈，把想法真正拍出来。</p>
+          </div>
+        </article>
+
+        <article class="mb-topic mb-reveal">
+          <div class="mb-topic-bg">
+            <svg viewBox="0 0 400 240" role="img" aria-label="专题《幕后四十八小时》创作纪实封面，摄影机与灯位示意图">
+              <rect width="400" height="240" fill="#171e28"/>
+              <rect x="60" y="80" width="130" height="80" rx="10" fill="#26313f" stroke="#6f8aa8"/>
+              <circle cx="125" cy="120" r="26" fill="#0d141d" stroke="#00e5c7" stroke-width="2"/>
+              <circle cx="125" cy="120" r="10" fill="#00e5c7" opacity=".7"/>
+              <g stroke="#ffcf5c" stroke-width="2" opacity=".8"><path d="M300 60v110"/><path d="M282 70h36"/></g>
+              <path d="M300 116 L244 148" stroke="#ffcf5c" stroke-width="2" opacity=".6"/>
+              <rect x="250" y="160" width="120" height="10" rx="5" fill="#4f8bff" opacity=".6"/>
+              <text x="20" y="38" fill="#c8d8ef" font-size="11" letter-spacing="2" font-family="sans-serif">BEHIND THE SCENE</text>
+            </svg>
+          </div>
+          <div class="mb-topic-body">
+            <span class="mb-topic-state mb-warm">更新至第 12 期</span>
+            <h3>幕后四十八小时</h3>
+            <p>跟着剧组熬完整整两天。灯光怎么布、预算怎么花、意外怎么救，全部如实呈现。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 创作者矩阵 ==================== -->
+  <section class="mb-section" id="mb-creators">
+    <div class="mb-wrap">
+      <div class="mb-section-head mb-reveal">
+        <span class="mb-eyebrow">Creators</span>
+        <h2 class="mb-h2">创作者矩阵：<em>412 位</em>签约作者中的四位代表</h2>
+        <p class="mb-sub">他们来自不同城市、不同背景，但都在用影像认真讲述自己在乎的事。</p>
+      </div>
+
+      <div class="mb-creators">
+        <article class="mb-creator mb-reveal">
+          <div class="mb-creator-avatar" style="background:linear-gradient(135deg,#00e5c7,#4f8bff)">柯</div>
+          <h3>实验员小柯</h3>
+          <p class="mb-craft">光影实验 · 教程干货</p>
+          <p class="mb-cdesc">前广告摄影助理，擅长把复杂的布光拆成可复制的步骤，被称为平台的「技术担当」。</p>
+          <div class="mb-creator-stats">
+            <div><b>76</b>作品</div><div><b>8.4万</b>关注</div>
+          </div>
+        </article>
+
+        <article class="mb-creator mb-reveal">
+          <div class="mb-creator-avatar" style="background:linear-gradient(135deg,#e0a961,#c88b4a)">野</div>
+          <h3>木作阿野</h3>
+          <p class="mb-craft">手作美学 · 匠人记录</p>
+          <p class="mb-cdesc">在城郊有一间小工坊，拍木工也拍木工之外的人。作品节奏慢，但几乎每条都有长评。</p>
+          <div class="mb-creator-stats">
+            <div><b>43</b>作品</div><div><b>5.1万</b>关注</div>
+          </div>
+        </article>
+
+        <article class="mb-creator mb-reveal">
+          <div class="mb-creator-avatar" style="background:linear-gradient(135deg,#8f6fb5,#4f8bff)">访</div>
+          <h3>访谈者林岚</h3>
+          <p class="mb-craft">人物访谈 · 在地文化</p>
+          <p class="mb-cdesc">做过八年记者，习惯先听完整再提问。她的访谈常被观众称为「让人愿意慢下来的视频」。</p>
+          <div class="mb-creator-stats">
+            <div><b>58</b>作品</div><div><b>6.9万</b>关注</div>
+          </div>
+        </article>
+
+        <article class="mb-creator mb-reveal">
+          <div class="mb-creator-avatar" style="background:linear-gradient(135deg,#b7ff3c,#00e5c7)">晨</div>
+          <h3>清晨记录者</h3>
+          <p class="mb-craft">日常记录 · 城市探索</p>
+          <p class="mb-cdesc">坚持每天五点半出门拍摄，三年从未间断。他的素材库被称为「一座城市的清晨档案」。</p>
+          <div class="mb-creator-stats">
+            <div><b>112</b>作品</div><div><b>9.6万</b>关注</div>
+          </div>
+        </article>
+      </div>
+
+      <a class="mb-more-link" href="#mb-contact">成为签约创作者 <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <!-- ==================== 榜单 + 故事 ==================== -->
+  <section class="mb-section" id="mb-rank">
+    <div class="mb-wrap">
+      <div class="mb-section-head mb-reveal">
+        <span class="mb-eyebrow">Ranking & Stories</span>
+        <h2 class="mb-h2">本周热度榜，以及那些<em>藏在片尾</em>的故事</h2>
+        <p class="mb-sub">数据每周一更新，由播放、收藏、互动与社区口碑综合计算，不接受任何形式的付费排名。</p>
+      </div>
+
+      <div class="mb-rank-grid">
+        <div class="mb-rank-panel mb-reveal">
+          <h3>影像热度榜 <span>TOP 6</span></h3>
+          <ol class="mb-rank-list">
+            <li><span class="mb-rank-no">1</span><span class="mb-rank-name">霓虹走廊：一条街的十二小时</span><span class="mb-rank-val">热度 9842</span></li>
+            <li><span class="mb-rank-no">2</span><span class="mb-rank-name">光影实验：用一块玻璃拍下雨夜</span><span class="mb-rank-val">热度 8720</span></li>
+            <li><span class="mb-rank-no">3</span><span class="mb-rank-name">手作木器：刨花落下的三十秒</span><span class="mb-rank-val">热度 7633</span></li>
+            <li><span class="mb-rank-no">4</span><span class="mb-rank-name">访谈：在旧书店里聊了三个下午</span><span class="mb-rank-val">热度 6915</span></li>
+            <li><span class="mb-rank-no">5</span><span class="mb-rank-name">城市清晨的第一班地铁</span><span class="mb-rank-val">热度 6204</span></li>
+            <li><span class="mb-rank-no">6</span><span class="mb-rank-name">把一间九平米出租屋拍出了电影感</span><span class="mb-rank-val">热度 5588</span></li>
+          </ol>
+        </div>
+
+        <div class="mb-rank-panel mb-reveal">
+          <h3>新人榜 <span>NEW</span></h3>
+          <ol class="mb-rank-list">
+            <li><span class="mb-rank-no">1</span><span class="mb-rank-name">阿布（食物日常）</span><span class="mb-rank-val">首作 7.2 分</span></li>
+            <li><span class="mb-rank-no">2</span><span class="mb-rank-name">灯下写字的猫（治愈影像）</span><span class="mb-rank-val">首作 6.9 分</span></li>
+            <li><span class="mb-rank-no">3</span><span class="mb-rank-name">南方口音（在地文化）</span><span class="mb-rank-val">首作 6.7 分</span></li>
+            <li><span class="mb-rank-no">4</span><span class="mb-rank-name">九号机位（科技测评）</span><span class="mb-rank-val">首作 6.5 分</span></li>
+            <li><span class="mb-rank-no">5</span><span class="mb-rank-name">一帧一帧（剪辑技巧）</span><span class="mb-rank-val">首作 6.3 分</span></li>
+            <li><span class="mb-rank-no">6</span><span class="mb-rank-name">旧胶片收藏员（复古影像）</span><span class="mb-rank-val">首作 6.1 分</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="mb-story-grid" style="margin-top:26px">
+        <article class="mb-story mb-reveal">
+          <div class="mb-story-quote">“</div>
+          <h3>拍到第七天，老木匠终于愿意让我拍他的手</h3>
+          <p>前六天他一直在躲镜头。第七天他擦完最后一遍蜡，把手掌摊在光里说：拍吧。那一段我留了整整八秒没有剪。</p>
+          <div class="mb-story-by"><span class="mb-avatar" style="background:linear-gradient(135deg,#e0a961,#c88b4a)">野</span>木作阿野 · 创作手记</div>
+        </article>
+
+        <article class="mb-story mb-reveal">
+          <div class="mb-story-quote">“</div>
+          <h3>雨夜那块玻璃，其实是从旧货市场淘的</h3>
+          <p>预算只有两百块。灯是台灯，水是喷壶，玻璃二十块。最后那一段光斑，拍了四十多条才成。</p>
+          <div class="mb-story-by"><span class="mb-avatar" style="background:linear-gradient(135deg,#00e5c7,#b7ff3c)">柯</span>实验员小柯 · 幕后记录</div>
+        </article>
+
+        <article class="mb-story mb-reveal">
+          <div class="mb-story-quote">“</div>
+          <h3>书店老板说，视频发出去之后，来了很多年轻人</h3>
+          <p>他没说谢谢，只是往我包里塞了两本旧书。上个月他打电话来，说想再聊一次，这次聊关门之后的事。</p>
+          <div class="mb-story-by"><span class="mb-avatar" style="background:linear-gradient(135deg,#8f6fb5,#4f8bff)">访</span>访谈者林岚 · 拍摄随笔</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 用户评价 ==================== -->
+  <section class="mb-section" id="mb-reviews">
+    <div class="mb-wrap">
+      <div class="mb-section-head mb-reveal">
+        <span class="mb-eyebrow">Community Voice</span>
+        <h2 class="mb-h2">来自社区的<em>真实声音</em></h2>
+        <p class="mb-sub">以下是部分用户与创作者在官方社群的公开反馈，内容未经改写。</p>
+      </div>
+
+      <div class="mb-reviews mb-reviews-wrap">
+        <div class="mb-review mb-reveal">
+          <div class="mb-review-top">
+            <span class="mb-avatar" style="background:linear-gradient(135deg,#4f8bff,#00e5c7)">林</span>
+            <b>林间有风</b><span class="mb-review-stars">★★★★★</span>
+          </div>
+          最打动我的不是画面有多漂亮，而是每一部片子都有明确的立场。看得出编辑是真的看过片子才写的推荐语。
+          <div class="mb-review-foot"><span>3 天前</span><button type="button" data-toast="感谢你的支持，我们会继续打磨内容">有用 42</button></div>
+        </div>
+
+        <div class="mb-review mb-reveal">
+          <div class="mb-review-top">
+            <span class="mb-avatar" style="background:linear-gradient(135deg,#e0a961,#ff7aa2)">木</span>
+            <b>木子不加班</b><span class="mb-review-stars">★★★★★</span>
+          </div>
+          作为刚上传第一支短片的新人，收到了官方编辑一段很长的反馈，具体到第几分钟的转场可以再收一点。这种认真在别处很少见。
+          <div class="mb-review-foot"><span>5 天前</span><button type="button" data-toast="很开心这条反馈对你有帮助">有用 67</button></div>
+        </div>
+
+        <div class="mb-review mb-reveal">
+          <div class="mb-review-top">
+            <span class="mb-avatar" style="background:linear-gradient(135deg,#b7ff3c,#00e5c7)">九</span>
+            <b>九号机位</b><span class="mb-review-stars">★★★★☆</span>
+          </div>
+          工具库里的调色预设确实好用，省了不少时间。唯一的小建议是希望可以按题材再细分一下分类。
+          <div class="mb-review-foot"><span>1 周前</span><button type="button" data-toast="建议已记录，会提交给产品团队">有用 29</button></div>
+        </div>
+
+        <div class="mb-review mb-reveal">
+          <div class="mb-review-top">
+            <span class="mb-avatar" style="background:linear-gradient(135deg,#8f6fb5,#4f8bff)">南</span>
+            <b>南方口音</b><span class="mb-review-stars">★★★★★</span>
+          </div>
+          城市光影计划来我们这边拍摄的时候，我第一次看到有人愿意在巷子里站两个小时等一场雨。成片出来那天我转给了全家人。
+          <div class="mb-review-foot"><span>1 周前</span><button type="button" data-toast="谢谢你把家乡的故事交给我们">有用 88</button></div>
+        </div>
+
+        <div class="mb-review mb-reveal">
+          <div class="mb-review-top">
+            <span class="mb-avatar" style="background:linear-gradient(135deg,#ffcf5c,#e0a961)">猫</span>
+            <b>灯下写字的猫</b><span class="mb-review-stars">★★★★★</span>
+          </div>
+          晚上睡不着的时候就打开这里，随便点一部。慢慢发现自己开始注意窗外的光线，注意楼下早餐摊的热气。
+          <div class="mb-review-foot"><span>2 周前</span><button type="button" data-toast="愿影像一直陪着你">有用 51</button></div>
+        </div>
+
+        <div class="mb-review mb-reveal">
+          <div class="mb-review-top">
+            <span class="mb-avatar" style="background:linear-gradient(135deg,#00e5c7,#4f8bff)">一</span>
+            <b>一帧一帧</b><span class="mb-review-stars">★★★★☆</span>
+          </div>
+          投稿审核大概三天，会有明确的修改意见。虽然慢一点，但比那种一键发布之后就石沉大海的平台踏实得多。
+          <div class="mb-review-foot"><span>3 周前</span><button type="button" data-toast="审核会继续保持在合理周期内">有用 34</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 创作灵感 ==================== -->
+  <section class="mb-section" id="mb-ideas">
+    <div class="mb-wrap">
+      <div class="mb-section-head mb-reveal">
+        <span class="mb-eyebrow">Inspiration</span>
+        <h2 class="mb-h2">创作灵感库：<em>卡住的时候</em>可以来这里看看</h2>
+        <p class="mb-sub">官方编辑团队整理的选题思路与剪辑方法，每周更新，全部免费开放。</p>
+      </div>
+
+      <div class="mb-idea-grid">
+        <article class="mb-idea mb-reveal">
+          <div class="mb-idea-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/></svg></div>
+          <h3>脚本灵感：从一个动作开始</h3>
+          <p>与其先想主题，不如先写下一个具体动作——比如「把窗推开」「把水烧开」。动作会自然带出人物与情绪。</p>
+        </article>
+
+        <article class="mb-idea mb-reveal">
+          <div class="mb-idea-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M9 19V10"/></svg></div>
+          <h3>标题建议：具体名词优先</h3>
+          <p>把「一次难忘的经历」换成「在便利店值夜班的第七个晚上」。具体的时间、地点与身份，更容易让人点开。</p>
+        </article>
+
+        <article class="mb-idea mb-reveal">
+          <div class="mb-idea-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18l6-8 4 5 3-4 3 7z"/><circle cx="8" cy="7" r="2"/></svg></div>
+          <h3>剪辑思路：先定呼吸节奏</h3>
+          <p>在剪之前先听一遍环境声，跟着声音的起伏定剪辑点。画面可以骗人，节奏骗不了人。</p>
+        </article>
+
+        <article class="mb-idea mb-reveal">
+          <div class="mb-idea-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l4 2"/></svg></div>
+          <h3>时长控制：三分钟原则</h3>
+          <p>如果三分钟内没有出现一个让人想继续看的瞬间，那就先别急着发布，回去重新想第一分钟。</p>
+        </article>
+
+        <article class="mb-idea mb-reveal">
+          <div class="mb-idea-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg></div>
+          <h3>拍摄清单：别漏掉空镜</h3>
+          <p>每场戏至少留三个空镜：门口、窗边、地面。它们会在剪辑时救你很多次。</p>
+        </article>
+
+        <article class="mb-idea mb-reveal">
+          <div class="mb-idea-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18V8l6-4 6 4v10"/><path d="M10 18v-5h4v5"/></svg></div>
+          <h3>声音设计：先录环境底噪</h3>
+          <p>每个场景先单独录二十秒安静的环境声，后期所有画面都能用它铺底，声音一下就顺了。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 企业动态 + 合作 ==================== -->
+  <section class="mb-section" id="mb-news">
+    <div class="mb-wrap">
+      <div class="mb-section-head mb-reveal">
+        <span class="mb-eyebrow">Newsroom</span>
+        <h2 class="mb-h2">企业动态与<em>官方发布</em></h2>
+        <p class="mb-sub">品牌资讯、内容更新与社区活动公告。最新信息以官方发布为准。</p>
+      </div>
+
+      <div class="mb-log">
+        <article class="mb-log-item mb-reveal">
+          <div class="mb-log-date">2026-11-12</div>
+          <div>
+            <h3>城市光影计划第七季正式启动，新增成都、西安双城站点</h3>
+            <p>本季计划将在两座城市各驻留三周，完成不少于十二支短片的拍摄与制作。创作者报名通道已同步开启，可在投稿入口提交选题方案。</p>
+          </div>
+          <span class="mb-log-tag">官方发布</span>
+        </article>
+
+        <article class="mb-log-item mb-reveal">
+          <div class="mb-log-date">2026-10-28</div>
+          <div>
+            <h3>创作激励 3.0 上线，原创短片纳入月度精品内容评选</h3>
+            <p>新版本调整了评选维度，弱化单一播放量权重，增加完播、评论质量与社区口碑三项。评选结果每月五日在榜单区公示。</p>
+          </div>
+          <span class="mb-log-tag">产品更新</span>
+        </article>
+
+        <article class="mb-log-item mb-reveal">
+          <div class="mb-log-date">2026-10-09</div>
+          <div>
+            <h3>影像工具库新增 42 组转场模板与调色预设</h3>
+            <p>本次更新覆盖城市夜景、室内自然光、黑白纪实三类场景，所有素材均提供正版授权说明，可一键下载使用。</p>
+          </div>
+          <span class="mb-log-tag">资源更新</span>
+        </article>
+
+        <article class="mb-log-item mb-reveal">
+          <div class="mb-log-date">2026-09-21</div>
+          <div>
+            <h3>玛雅图霸天下与三家在地文化机构达成记录合作</h3>
+            <p>合作将围绕老街区、传统手工艺与口述史展开，首批成片预计于年底前在专题区陆续发布。</p>
+          </div>
+          <span class="mb-log-tag">合作动态</span>
+        </article>
+      </div>
+
+      <h3 style="margin:34px 0 16px;font-size:15px;color:var(--mb-dim);letter-spacing:1px">合作品牌与伙伴</h3>
+      <div class="mb-partners">
+        <div class="mb-partner">城市文化馆</div>
+        <div class="mb-partner">光影器材社</div>
+        <div class="mb-partner">旧书计划</div>
+        <div class="mb-partner">南方影像节</div>
+        <div class="mb-partner">手艺人工坊</div>
+        <div class="mb-partner">青年放映室</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section class="mb-section" id="mb-faq">
+    <div class="mb-wrap">
+      <div class="mb-section-head mb-reveal">
+        <span class="mb-eyebrow">Help</span>
+        <h2 class="mb-h2">常见问题：关于<em>投稿、审核与版权</em></h2>
+        <p class="mb-sub">如果你还有其他疑问，可以通过页面底部的联系方式找到我们。</p>
+      </div>
+
+      <div class="mb-faq">
+        <details open>
+          <summary>如何成为玛雅图霸天下的签约创作者？</summary>
+          <p>先完成账号注册，然后通过「投稿入口」提交至少一支完整作品与一段选题自述。官方编辑会在五个工作日内给出反馈，通过后会安排一次线上沟通，确认后续的选题方向与协作方式。</p>
+        </details>
+        <details>
+          <summary>作品审核一般需要多久？会给出修改意见吗？</summary>
+          <p>常规审核周期为两到三个工作日，专题征稿期间可能延长至五个工作日。除极少数不符合基本规范的作品外，审核结果都会附带具体意见，包括节奏、声音、字幕与版权说明等方面。</p>
+        </details>
+        <details>
+          <summary>平台的音乐与素材可以商用吗？</summary>
+          <p>影像工具库中的素材分为两类：一类仅限站内作品使用，另一类提供可下载的正版授权说明。具体授权范围会在素材详情页明确标注，商业用途请以说明文件为准。</p>
+        </details>
+        <details>
+          <summary>投稿作品必须首发在玛雅图霸天下吗？</summary>
+          <p>不强制首发，但我们鼓励在平台首发的作品优先进入精品内容池。若作品已在其他平台发布，请在投稿时注明，并确保证明你拥有完整的内容权利。</p>
+        </details>
+        <details>
+          <summary>城市光影计划的报名有地域限制吗？</summary>
+          <p>没有。计划每季选定不同城市驻留拍摄，但报名向所有创作者开放。外地创作者可申请差旅支持，具体名额与标准随每季公告一并发布。</p>
+        </details>
+        <details>
+          <summary>如何申请素材借用或设备支持？</summary>
+          <p>签约创作者可在创作后台提交设备借用申请，说明拍摄计划与使用周期。新人作者可通过「第一支片子」计划的设备通道申请，审批通过后按约定时间领取。</p>
+        </details>
+        <details>
+          <summary>社区对评论有哪些规则？</summary>
+          <p>我们鼓励具体、诚实、有建设性的反馈，禁止人身攻击、恶意刷屏与未经许可的商业推广。违规评论会被折叠或删除，多次违规将限制互动权限。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 联系 / 投稿 ==================== -->
+  <section class="mb-section" id="mb-contact">
+    <div class="mb-wrap">
+      <div class="mb-section-head mb-reveal">
+        <span class="mb-eyebrow">Contact</span>
+        <h2 class="mb-h2">联系我们，或者<em>把你的片子</em>交给我们</h2>
+        <p class="mb-sub">无论是合作洽谈、投稿咨询还是社区反馈，都欢迎直接联系我们。</p>
+      </div>
+
+      <div class="mb-contact-grid">
+        <div class="mb-contact-card mb-reveal">
+          <h3>官方联系方式</h3>
+          <p>Maya Board 玛雅图霸天下官方网站由品牌内容中心统一运营。工作日 10:00–19:00 有专人回复，节假日顺延。</p>
+          <div class="mb-contact-line">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg>
+            合作与投稿：creator@mayaboard.studio
+          </div>
+          <div class="mb-contact-line">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+            商务洽谈：bd@mayaboard.studio
+          </div>
+          <div class="mb-contact-line">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            内容中心：城市影像产业园 B 座 5 层
+          </div>
+          <div class="mb-inline-form">
+            <input type="text" id="mb-contact-mail" placeholder="留下你的联系邮箱" aria-label="联系邮箱">
+            <button class="mb-btn mb-btn-primary" type="button" id="mb-contact-btn">提交联系</button>
+          </div>
+          <p class="mb-form-hint" id="mb-contact-hint" aria-live="polite"></p>
+        </div>
+
+        <div class="mb-contact-card mb-reveal">
+          <h3>投稿前请确认</h3>
+          <p>为了让审核更顺畅，请在提交作品前逐项检查以下内容。完整的材料会显著缩短审核周期。</p>
+          <div class="mb-contact-line">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            作品为原创或已取得完整授权
+          </div>
+          <div class="mb-contact-line">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            成片画质不低于 1080P，音画同步
+          </div>
+          <div class="mb-contact-line">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            字幕与音乐版权说明齐全
+          </div>
+          <div class="mb-contact-line">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            附一段两百字以内的创作自述
+          </div>
+          <div class="mb-hero-actions" style="margin-top:20px">
+            <button class="mb-btn mb-btn-primary" type="button" id="mb-submit-btn-2">打开投稿窗口</button>
+            <button class="mb-btn mb-btn-ghost" type="button" id="mb-report-btn">反馈问题</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="mb-footer">
+  <div class="mb-wrap">
+    <div class="mb-footer-grid">
+      <div class="mb-footer-brand">
+        <a class="mb-logo" href="#mb-top" aria-label="返回玛雅图霸天下官网首页">
+          <span class="mb-logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 18V6l8 5 8-5v12" stroke="#04121a" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="mb-logo-text">
+            <strong>Maya Board</strong>
+            <span>玛雅图霸天下</span>
+          </span>
+        </a>
+        <p>Maya Board 玛雅图霸天下官方网站。专注创意影像出品与创作者社区的企业品牌，坚持正版、高清、专业的出品标准，持续运营，值得信赖。</p>
+      </div>
+
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#mb-focus">焦点影像</a></li>
+          <li><a href="#mb-topics">专题企划</a></li>
+          <li><a href="#mb-creators">创作者矩阵</a></li>
+          <li><a href="#mb-rank">热度榜单</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>关于品牌</h4>
+        <ul>
+          <li><a href="#mb-about">品牌解析</a></li>
+          <li><a href="#mb-news">企业动态</a></li>
+          <li><a href="#mb-ideas">创作灵感</a></li>
+          <li><a href="#mb-faq">常见问题</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>参与社区</h4>
+        <ul>
+          <li><a href="#mb-contact">投稿入口</a></li>
+          <li><a href="#mb-contact">合作洽谈</a></li>
+          <li><a href="#mb-reviews">社区反馈</a></li>
+          <li><a href="#mb-contact">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mb-footer-bottom">
+      <span>© 2026 Maya Board 玛雅图霸天下 官方网站 · 版权所有 · 持续运营中</span>
+      <span>品牌备案号：MB-2026-VISUAL-0712 · 内容均为原创正版</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== 通用交互元素 ==================== -->
+<div class="mb-toast" id="mb-toast" role="status" aria-live="polite"></div>
+
+<button class="mb-top-btn" id="mb-top-btn" type="button" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg>
+</button>
+
+<!-- 分享弹窗 -->
+<div class="mb-modal" id="mb-share-modal" role="dialog" aria-modal="true" aria-labelledby="mb-share-title">
+  <div class="mb-modal-box">
+    <h3 id="mb-share-title">分享品牌首页 <span>官方</span></h3>
+    <p>把 Maya Board 玛雅图霸天下推荐给同样热爱影像的朋友。</p>
+    <div class="mb-share-row">
+      <button class="mb-share-item" type="button" data-share-way="微信">
+        <span class="mb-share-ico" style="background:#3ecf7b">微</span>微信
+      </button>
+      <button class="mb-share-item" type="button" data-share-way="微博">
+        <span class="mb-share-ico" style="background:#ff6a6a">微</span>微博
+      </button>
+      <button class="mb-share-item" type="button" data-share-way="QQ">
+        <span class="mb-share-ico" style="background:#5aa9ff">Q</span>QQ
+      </button>
+      <button class="mb-share-item" type="button" data-share-way="朋友圈">
+        <span class="mb-share-ico" style="background:#b7ff3c">圈</span>朋友圈
+      </button>
+    </div>
+    <div class="mb-copy-line">
+      <input type="text" id="mb-share-link" readonly value="Maya Board 玛雅图霸天下 · 官方网站品牌首页">
+      <button class="mb-btn mb-btn-primary" type="button" id="mb-copy-btn">复制</button>
+    </div>
+    <div class="mb-modal-actions">
+      <button class="mb-btn mb-btn-ghost" type="button" data-close-modal>关闭</button>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿弹窗 -->
+<div class="mb-modal" id="mb-submit-modal" role="dialog" aria-modal="true" aria-labelledby="mb-submit-title">
+  <div class="mb-modal-box">
+    <h3 id="mb-submit-title">投稿入口 <span>官方通道</span></h3>
+    <p>填写基本信息后提交，官方编辑会在五个工作日内通过邮件联系你。请确保作品为原创并拥有完整权利。</p>
+    <form id="mb-submit-form">
+      <div class="mb-modal-field">
+        <label for="mb-s-name">创作者昵称</label>
+        <input type="text" id="mb-s-name" placeholder="例如：实验员小柯" required>
+      </div>
+      <div class="mb-modal-field">
+        <label for="mb-s-mail">联系邮箱</label>
+        <input type="email" id="mb-s-mail" placeholder="用于接收审核结果" required>
+      </div>
+      <div class="mb-modal-field">
+        <label for="mb-s-title">作品名称</label>
+        <input type="text" id="mb-s-title" placeholder="例如：霓虹走廊：一条街的十二小时" required>
+      </div>
+      <div class="mb-modal-field">
+        <label for="mb-s-desc">创作自述（两百字以内）</label>
+        <textarea id="mb-s-desc" rows="4" placeholder="简单说说这支片子的选题、拍摄方式与你想表达的内容"></textarea>
+      </div>
+      <div class="mb-modal-actions">
+        <button class="mb-btn mb-btn-ghost" type="button" data-close-modal>取消</button>
+        <button class="mb-btn mb-btn-primary" type="submit">提交作品</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 反馈弹窗 -->
+<div class="mb-modal" id="mb-report-modal" role="dialog" aria-modal="true" aria-labelledby="mb-report-title">
+  <div class="mb-modal-box">
+    <h3 id="mb-report-title">反馈问题 <span>社区</span></h3>
+    <p>如果你发现内容错误、版权问题或社区违规行为，请在此说明，我们会在三个工作日内处理。</p>
+    <form id="mb-report-form">
+      <div class="mb-modal-field">
+        <label for="mb-r-type">问题类型</label>
+        <input type="text" id="mb-r-type" placeholder="例如：版权 / 审核 / 社区互动" required>
+      </div>
+      <div class="mb-modal-field">
+        <label for="mb-r-desc">具体描述</label>
+        <textarea id="mb-r-desc" rows="4" placeholder="请尽量描述清楚发生的位置与情况" required></textarea>
+      </div>
+      <div class="mb-modal-actions">
+        <button class="mb-btn mb-btn-ghost" type="button" data-close-modal>取消</button>
+        <button class="mb-btn mb-btn-primary" type="submit">提交反馈</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 搜索无结果提示弹窗 -->
+<div class="mb-modal" id="mb-info-modal" role="dialog" aria-modal="true" aria-labelledby="mb-info-title">
+  <div class="mb-modal-box">
+    <h3 id="mb-info-title">提示 <span>官方</span></h3>
+    <p id="mb-info-text">暂无内容。</p>
+    <div class="mb-modal-actions">
+      <button class="mb-btn mb-btn-primary" type="button" data-close-modal>我知道了</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var toastEl = document.getElementById('mb-toast');
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toastEl.classList.remove('is-show');
+    }, 2400);
+  }
+
+  /* ---------- 移动端导航折叠 ---------- */
+  var burger = document.getElementById('mb-burger');
+  var nav = document.getElementById('mb-nav');
+  if(burger && nav){
+    burger.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      burger.classList.toggle('is-open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        nav.classList.remove('is-open');
+        burger.classList.remove('is-open');
+        burger.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* ---------- 搜索前端反馈 ---------- */
+  var searchInput = document.getElementById('mb-search-input');
+  var infoModal = document.getElementById('mb-info-modal');
+  var infoText = document.getElementById('mb-info-text');
+  var searchForm = document.getElementById('mb-search-form');
+
+  var searchIndex = [
+    {keys:['霓虹','走廊','街道','夜'], tip:'已定位到焦点作品《霓虹走廊：一条街的十二小时》，位于「焦点影像」板块。'},
+    {keys:['手作','木器','木工','刨花'], tip:'已定位到《手作木器：刨花落下的三十秒》，作者：木作阿野。'},
+    {keys:['访谈','书店','旧书'], tip:'已定位到《访谈：在旧书店里聊了三个下午》，位于「焦点影像」板块。'},
+    {keys:['光影','玻璃','雨夜','布光'], tip:'已定位到《光影实验：用一块玻璃拍下雨夜》，作者：实验员小柯。'},
+    {keys:['地铁','清晨','城市'], tip:'已定位到《城市清晨的第一班地铁》，作者：清晨记录者。'},
+    {keys:['小柯','创作者','作者'], tip:'实验员小柯为平台签约创作者，擅长光影实验与教程干货。'},
+    {keys:['阿野','木作'], tip:'木作阿野为平台签约创作者，擅长手作美学与匠人记录。'},
+    {keys:['林岚'], tip:'访谈者林岚为平台签约创作者，擅长人物访谈与在地文化。'},
+    {keys:['专题','计划','企划'], tip:'平台现有「城市光影计划」「第一支片子」「幕后四十八小时」三个长期专题。'},
+    {keys:['投稿','上传','报名','提交'], tip:'投稿通道已开放，可点击页面右上角「投稿入口」提交作品信息。'},
+    {keys:['版权','正版','授权'], tip:'平台坚持正版授权与合规发布，素材授权范围会在详情页明确标注。'},
+    {keys:['榜单','排行','热度'], tip:'每周一更新影像热度榜与新人榜，位于「榜单与故事」板块。'}
+  ];
+
+  function openModal(el){
+    if(!el) return;
+    el.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(el){
+    if(!el) return;
+    el.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  function closeAllModals(){
+    document.querySelectorAll('.mb-modal.is-open').forEach(function(m){
+      m.classList.remove('is-open');
+    });
+    document.body.style.overflow = '';
+  }
+
+  if(searchForm && searchInput){
+    searchForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var q = searchInput.value.trim();
+      if(!q){
+        showToast('请输入关键词后再搜索');
+        searchInput.focus();
+        return;
+      }
+      var hit = null;
+      for(var i=0;i<searchIndex.length;i++){
+        var item = searchIndex[i];
+        for(var k=0;k<item.keys.length;k++){
+          if(q.indexOf(item.keys[k]) !== -1 || item.keys[k].indexOf(q) !== -1){
+            hit = item; break;
+          }
+        }
+        if(hit) break;
+      }
+      if(infoText){
+        infoText.textContent = hit
+          ? hit.tip
+          : '暂未找到与「' + q + '」直接匹配的内容。你可以尝试搜索「霓虹」「手作」「访谈」「光影」「投稿」等关键词，或浏览下方焦点影像板块。';
+      }
+      openModal(infoModal);
+    });
+  }
+
+  /* ---------- 点赞 / 收藏 ---------- */
+  document.querySelectorAll('[data-like]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var counter = btn.querySelector('[data-like-count]');
+      var liked = btn.classList.toggle('is-liked');
+      btn.setAttribute('aria-pressed', liked ? 'true' : 'false');
+      if(counter){
+        var n = parseInt(counter.textContent.replace(/[^\d]/g,''), 10) || 0;
+        counter.textContent = liked ? (n + 1) : Math.max(0, n - 1);
+      }
+      showToast(liked ? '已点赞，感谢你的支持' : '已取消点赞');
+    });
+  });
+
+  document.querySelectorAll('[data-fav]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var on = btn.classList.toggle('is-faved');
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      showToast(on ? '已加入收藏，可在个人中心查看' : '已取消收藏');
+    });
+  });
+
+  /* ---------- 播放提示 ---------- */
+  document.querySelectorAll('[data-play]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      showToast('品牌形象片正在准备中，敬请关注官方发布');
+    });
+  });
+
+  /* ---------- 评论/有用按钮 ---------- */
+  document.querySelectorAll('[data-toast]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      showToast(btn.getAttribute('data-toast') || '已记录');
+    });
+  });
+
+  /* ---------- 分享弹窗 ---------- */
+  var shareModal = document.getElementById('mb-share-modal');
+  document.querySelectorAll('[data-share], #mb-share-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      openModal(shareModal);
+    });
+  });
+
+  document.querySelectorAll('[data-share-way]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      showToast('已生成分享内容，可通过' + btn.getAttribute('data-share-way') + '发送给朋友');
+    });
+  });
+
+  /* ---------- 复制 ---------- */
+  function copyText(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        showToast('已复制到剪贴板');
+      }).catch(function(){
+        showToast('复制失败，请手动选择文本');
+      });
+    }else{
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try{
+        document.execCommand('copy');
+        showToast('已复制到剪贴板');
+      }catch(err){
+        showToast('复制失败，请手动选择文本');
+      }
+      document.body.removeChild(ta);
+    }
+  }
+
+  var copyBtn = document.getElementById('mb-copy-btn');
+  var shareLink = document.getElementById('mb-share-link');
+  if(copyBtn && shareLink){
+    copyBtn.addEventListener('click', function(){
+      copyText(shareLink.value);
+    });
+  }
+
+  /* ---------- 投稿弹窗 ---------- */
+  var submitModal = document.getElementById('mb-submit-modal');
+  ['mb-submit-btn','mb-submit-btn-2'].forEach(function(id){
+    var b = document.getElementById(id);
+    if(b){
+      b.addEventListener('click', function(){ openModal(submitModal); });
+    }
+  });
+
+  var submitForm = document.getElementById('mb-submit-form');
+  if(submitForm){
+    submitForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('mb-s-name').value.trim();
+      var mail = document.getElementById('mb-s-mail').value.trim();
+      var title = document.getElementById('mb-s-title').value.trim();
+      if(!name || !mail || !title){
+        showToast('请完整填写昵称、邮箱与作品名称');
+        return;
+      }
+      showToast('投稿已提交，官方编辑将在五个工作日内联系你');
+      submitForm.reset();
+      closeModal(submitModal);
+    });
+  }
+
+  /* ---------- 反馈弹窗 ---------- */
+  var reportModal = document.getElementById('mb-report-modal');
+  var reportBtn = document.getElementById('mb-report-btn');
+  if(reportBtn){
+    reportBtn.addEventListener('click', function(){ openModal(reportModal); });
+  }
+  var reportForm = document.getElementById('mb-report-form');
+  if(reportForm){
+    reportForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var type = document.getElementById('mb-r-type').value.trim();
+      var desc = document.getElementById('mb-r-desc').value.trim();
+      if(!type || !desc){
+        showToast('请填写问题类型与具体描述');
+        return;
+      }
+      showToast('反馈已收到，我们会在三个工作日内处理');
+      reportForm.reset();
+      closeModal(reportModal);
+    });
+  }
+
+  /* ---------- 关闭弹窗 ---------- */
+  document.querySelectorAll('[data-close-modal]').forEach(function(btn){
+    btn.addEventListener('click', closeAllModals);
+  });
+  document.querySelectorAll('.mb-modal').forEach(function(m){
+    m.addEventListener('click', function(e){
+      if(e.target === m) closeAllModals();
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeAllModals();
+  });
+
+  /* ---------- 订阅 & 联系表单 ---------- */
+  function simpleSubmit(inputId, btnId, hintId, okMsg, emptyMsg){
+    var input = document.getElementById(inputId);
+    var btn = document.getElementById(btnId);
+    var hint = document.getElementById(hintId);
+    if(!input || !btn) return;
+    btn.addEventListener('click', function(){
+      var v = input.value.trim();
+      if(!v){
+        if(hint){ hint.textContent = emptyMsg; hint.style.color = '#ff9a9a'; }
+        return;
+      }
+      if(v.indexOf('@') === -1){
+        if(hint){ hint.textContent = '请填写有效的邮箱地址'; hint.style.color = '#ff9a9a'; }
+        return;
+      }
+      if(hint){ hint.textContent = okMsg; hint.style.color = ''; }
+      input.value = '';
+      showToast(okMsg);
+    });
+  }
+  simpleSubmit('mb-news-mail','mb-news-btn','mb-news-hint','订阅成功，官方内容月报将在每月初发送', '请先填写邮箱地址');
+  simpleSubmit('mb-contact-mail','mb-contact-btn','mb-contact-hint','已收到你的联系方式，我们会尽快回复', '请先填写联系邮箱');
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('mb-top-btn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520){
+      topBtn.classList.add('is-show');
+    }else{
+      topBtn.classList.remove('is-show');
+    }
+  }, {passive:true});
+  if(topBtn){
+    topBtn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  /* ---------- 数字滚动 ---------- */
+  var statNums = document.querySelectorAll('[data-count]');
+  function animateNum(el){
+    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    var em = el.querySelector('em');
+    var suffix = em ? em.outerHTML : '';
+    var start = null;
+    var dur = 1300;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = Math.round(target * eased);
+      el.innerHTML = val + suffix;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var statObserver = null;
+  if('IntersectionObserver' in window){
+    statObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          animateNum(en.target);
+          statObserver.unobserve(en.target);
+        }
+      });
+    }, {threshold:.5});
+    statNums.forEach(function(el){ statObserver.observe(el); });
+  }else{
+    statNums.forEach(function(el){
+      var t = parseInt(el.getAttribute('data-count'),10) || 0;
+      var em = el.querySelector('em');
+      el.innerHTML = t + (em ? em.outerHTML : '');
+    });
+  }
+
+  /* ---------- 滚动入场 ---------- */
+  var reveals = document.querySelectorAll('.mb-reveal');
+  if('IntersectionObserver' in window){
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add('is-in');
+          ro.unobserve(en.target);
+        }
+      });
+    }, {threshold:.08, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){ ro.observe(el); });
+  }else{
+    reveals.forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+})();
+</script>
+</body>
+  </html>
